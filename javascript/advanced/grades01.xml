@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grades>
+	<student name="zhangsan">
+		<chinese>70</chinese>
+		<math>80</math>
+		<english>90</english>
+	</student>
+	<student name="lisi">
+		<chinese>72</chinese>
+		<math>82</math>
+		<english>92</english>
+	</student>
+	<student name="wangwu">
+		<chinese>75</chinese>
+		<math>85</math>
+		<english>95</english>
+	</student>	
+</grades>

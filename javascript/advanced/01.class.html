@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+	   <script type="text/javascript">
+			//1.Factory
+			function createStu(name,age,sex) {
+				var stu = new Object();
+				stu.name = name;
+				stu.age = age;
+				stu.sex = sex;
+				stu.sayName = function () {
+					alert(stu.name);
+				}
+				return stu;
+			}
+			//2.Constructor
+			function Stu1(name,age,sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				this.sayName = function () {
+					alert(this.name);
+				}
+			}
+			//3.Prototype
+			function Stu2() {
+			}
+			Stu2.prototype.school = "xxx school";
+			Stu2.prototype.otherInfo = [];
+			Stu2.prototype.sayName = function () {
+					alert(this.name + " of " + this.school);
+			}
+			
+			//4. Mixed
+			function Stu4(name,age,sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			
+			Stu4.prototype.school = "xxx school";
+			Stu4.prototype.sayName = function () {
+					alert(this.name + " of " + this.school);
+			}
+			
+			//5. Dynamic Prototype
+			function Stu(name,age,sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				
+				if (!Stu.initialized) {
+					Stu.prototype.school = "xxx school";
+					Stu.prototype.sayName = function () {
+						alert(this.name + " of " + this.school);
+					}
+				}
+				
+				Stu.initialized = true;
+			}
+			
+			function ExtStu(name,age,sex,addr) {
+				Stu.call(this,name,age,sex);
+				this.addr = addr;
+			}
+			
+			ExtStu.prototype = new Stu();
+			ExtStu.prototype.phone = "021";
+			ExtStu.prototype.sayAddr = function () {
+				alert(this.addr);
+			}
+			
+			function Actions() {
+			}
+			Actions.prototype.study = function () {
+				alert("Study");
+			}
+			
+			for (var m in Actions.prototype) {
+				ExtStu.prototype[m] = Actions.prototype[m];
+			}
+			
+			//static class
+			var STATIC_CLASS = {
+				prop: "Test Static Property1",  //静态属性
+				meth: function () {//静态方法
+					return "Test Static Method1"
+				}
+			};
+			var ABC = {};
+			ABC.Utils = {};
+			ABC.Utils.STATIC_CLASS = {
+				prop: "Test Static Property2",  //静态属性
+				meth: function () {//静态方法
+					return "Test Static Method2"
+				}
+			};
+			
+			function test() {
+				var stu1 = new ExtStu("Zhangsan",18,true,"BeiJing");
+				var stu2 = new ExtStu("Lisi",20,false,"Shanghai");
+				
+				var d = new Date();
+				//alert((typeof(stu1) == 'object') && (stu1 instanceof ExtStu));		
+				//alert(ExtStu.prototype.isPrototypeOf(stu1));		
+				alert(Function.prototype.isPrototypeOf(ExtStu));		
+
+				
+			};
+			
+	   </script>
+   </head>
+  <body>
+	<button onclick="test()">Test</button>
+  </body>
+</html>

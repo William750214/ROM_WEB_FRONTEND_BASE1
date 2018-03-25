@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+	   <script type="text/javascript">
+			document.write(screen.height + "<br/>");		//有效
+			document.write(screen.width + "<br/>");
+			document.write(screen.availHeight + "<br/>");	//实际
+			document.write(screen.availWidth + "<br/>");
+			document.write(screen.colorDepth + "<br/>");
+			
+			document.write(navigator.language + "<br/>");
+			
+			document.write("Plugins as follow: <br/>");
+			var plugins = navigator.plugins;
+			
+			for (var i in plugins) {
+				var plugin = plugins[i];
+				document.write(plugin.name + "<br/>");
+			}
+			
+			document.write(navigator.cookieEnabled+ "<br/>");
+
+	   </script>
+   </head>
+  <body>
+  	<br/>
+	<a href="11.document.html">document</a>
+	<button onclick="openWin()">Open</button>
+	<br/>
+	<br/>
+
+  </body>
+</html>

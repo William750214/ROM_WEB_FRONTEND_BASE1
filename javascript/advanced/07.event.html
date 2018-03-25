@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+	   <style type="text/css" id="style01">
+			.div01 {
+				background-color:yellow;
+				font-size:18px;
+				width:300px;
+				height:200px;
+			}
+			.div02 {
+				background-color:red;
+				font-size:18px;
+				width:500px;
+				height:300px;
+			}			
+	   </style>
+	   <script type="text/javascript">	
+			function onLoad(){
+				var btn01 = document.getElementById("btn01");
+				var div01 = document.getElementById("div01");
+				var div02 = document.getElementById("div02");
+				//btn01.onclick = test01;
+				//btn01.onclick = test02;
+				btn01.addEventListener("click",test01);
+				div01.addEventListener("click",test02);
+				div02.addEventListener("click",test03);
+				
+				btn01.addEventListener("contextmenu",test04);				
+			}
+			function test01(e) {
+				e.stopPropagation();
+				alert("Test 01!");
+			};	
+			function test02(e) {
+
+				alert("Test 02!");
+			};	
+			function test03(e) {
+				alert("Test 03!");
+			};	
+			function test04(e) {
+				e.preventDefault();
+				alert("Test 04!");
+			};			
+			
+			var event = document.createEvent('Event');
+			event.initEvent("childcry",false,false);
+			
+			document.addEventListener("childcry",function(){
+				alert("Get milk!");
+			});
+			
+			window.setInterval(function(){
+				document.dispatchEvent(event);
+			},50000);
+			
+	   </script>
+   </head>
+  <body onload="onLoad()">
+	<br>
+	<!--
+	<div style="background-color:yellow;font-size:18px;width:500px;height:300px">This is test DIV!</div>
+	-->
+	<div id="div02" class="div02"><div id="div01" class="div01"><button id="btn01">Test</button></div></div>
+  </body>
+</html>

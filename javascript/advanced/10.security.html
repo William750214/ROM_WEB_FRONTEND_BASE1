@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+	   <script type="text/javascript">	
+			function onLoad() {			
+			};
+			function test() {
+				var txt = document.getElementById("txt01").value;
+				txt = txt.replace(/</g,"&lt;");
+				txt = txt.replace(/>/g,"&gt;");
+				document.getElementById("div01").innerHTML = txt;
+				//alert(888);
+			};	
+			
+	   </script>
+   </head>
+  <body onload="onLoad()">
+	<button onclick="test()">Test</button>
+<br/><br/>
+<textarea id="txt01" rows="5" cols="30"></textarea>
+<br/><br/>
+<div id="div01" style="background-color:yellow;width:300px;height:100px"></div>
+<br/><br/>
+<a href="https://www.baidu.com"><img src="./images/monster.png" width="50px" height="30px"/></a>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+	   <script type="text/javascript" src="./js/seap_utils.js"></script>
+	   <script type="text/javascript">			
+			function test() {
+				SEAP.CookieUtil.add("id","8");
+				SEAP.CookieUtil.add("name","zhangsan");
+
+				var cookies = SEAP.CookieUtil.getAll();
+				
+				SEAP.CookieUtil.removeAll();
+
+				alert(SEAP.CookieUtil.get("id"));
+			};	
+			
+	   </script>
+   </head>
+  <body>
+	<button onclick="test()">Test</button>
+  </body>
+</html>

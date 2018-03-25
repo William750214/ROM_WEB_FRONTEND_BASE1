@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+  	   <script type="text/javascript" defer="defer">
+			function openWin1() {
+				var txt = document.getElementById("txt01");
+				var obj = {};
+				obj.name = txt.value;
+				obj.age = 18;
+				var winRetVal = window.showModelessDialog("./14.subwin.html",obj,"dialogWidth=500px;dialogHeight=300px");
+				txt.value = winRetVal;
+				
+			}
+			function openWin() {
+				var strUrl = "http://asfasf.com/中 沙发?name=张三&age=18";
+				alert(encodeURIComponent(" "));
+				//window.location.href = ""
+				
+			}
+			
+			var num1 = 10;
+			var num2 = 20;
+			
+			var strNum= "num1 + num2";
+			
+			alert(eval(strNum));
+			
+	   </script>
+   </head>
+  <body onload="">
+  	<br/>
+	<p id="p1">Hello World!</p>
+	<input type="text" id="txt01">
+	<button id="btn01" onclick="openWin()">Open</button>
+	<br/>
+  </body>
+</html>

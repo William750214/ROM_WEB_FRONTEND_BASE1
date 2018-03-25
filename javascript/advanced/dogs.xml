@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>  
+<?xml-stylesheet type="text/xsl" href="dogs.xsl"?>  
+  
+<myDogs>  
+<dog breed="labrador">  
+    <name>morgan</name>  
+    <age>  
+        <years>1</years>  
+        <months>10</months>  
+    </age>  
+    <fullBlood>yes</fullBlood>  
+    <color>Chocolate</color>  
+</dog>  
+</myDogs> 

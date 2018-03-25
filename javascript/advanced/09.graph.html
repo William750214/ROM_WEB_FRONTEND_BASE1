@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+	   <meta name="description" content="This is Chris's Home Page">
+	   <meta name="keywords" content="Chris,Web,Music,photo">
+	   <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+       <title>Hello JavaScript!</title>
+	   <script type="text/javascript">	
+			function onLoad() {
+				new Image().src = "./images/monster.png";
+				new Image().src = "./images/add.png";
+				
+				var link01 = document.querySelector("a");
+				var img = document.querySelector("img");
+				
+				link01.addEventListener("mouseover",function(){
+					img.src = "./images/add.png"
+				});
+				link01.addEventListener("mouseout",function(){
+					img.src = "./images/monster.png"
+				});				
+			};
+			function test() {
+				alert(888);
+			};	
+			
+	   </script>
+   </head>
+  <body onload="onLoad()">
+	<button onclick="test()">Test</button>
+<br/><br/>
+<br/><br/>
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="300" cy="100" r="100" stroke="yellow"
+stroke-width="2" fill="red"/>
+
+</svg>
+<br/><br/>
+<a href="https://www.baidu.com"><img src="./images/monster.png" width="50px" height="30px"/></a>
+  </body>
+</html>
